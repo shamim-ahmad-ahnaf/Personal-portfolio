@@ -3,7 +3,7 @@ import tomato from "../../public/tomato.png"
 import student from "../../public/student.png"
 import clock from "../../public/clock.png"
 import animation from "../../public/animation.png"
-import tailwind from "../../public/tailwind.png"
+import tailwind from "../../public/tomato.png"
 
 export default function Projects() {
     const projects = [
@@ -49,13 +49,7 @@ export default function Projects() {
             image: tailwind
         },
 
-        {
-            title: "First Tailwind",
-            description: "This is my first tailwind project from myself.",
-            link: "https://shamim-ahmad-ahnaf.github.io/Tailwind-Full/",
-            github: "https://github.com/shamim-ahmad-ahnaf/Tailwind-Full",
-            image: tailwind
-        },
+       
     ];
 
     return (

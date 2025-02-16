@@ -42,8 +42,49 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 5;
-
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+    gap: 15px;
+  }
+  
+  #menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    color: white;
+  }
+  
+
+  @media (max-width: 768px) {
+    #menu-icon {
+      display: block;
+    }
+  
+    .navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+    }
+  
+    .navbar.open {
+      display: flex;
+    }
+  }
+  
 
 
 .logo {
@@ -85,6 +126,10 @@ body {
 .logo {
     font-family: 'Great Vibes', cursive;
     font-weight: bold;
+}
+
+.home-contact h1 span {
+    font-family: 'Great Vibes', cursive;
 }
 
 
@@ -297,17 +342,17 @@ span {
 
     21%,
     40% {
-        content: "Frontend Designer";
+        content: "Software Tester";
     }
 
     41%,
     60% {
         content: "UI / UX Designer";
     }
-
+    
     81%,
     100% {
-        content: "Software Tester";
+        content: "Web Developer";
     }
 }
 
@@ -535,7 +580,7 @@ span {
 }
 
 #projects h2 {
-    font-size: 82px;
+    font-size: 52px;
     font-weight: 800;
     text-align: center;
     color: white;

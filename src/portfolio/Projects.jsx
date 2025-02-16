@@ -1,23 +1,52 @@
 import React from "react";
 import tomato from "../../public/tomato.png"
+import student from "../../public/student.png"
+import clock from "../../public/clock.png"
+import animation from "../../public/animation.png"
+import tailwind from "../../public/tailwind.png"
 
 export default function Projects() {
     const projects = [
 
         {
-            title: "E-commerce Store",
-            description: "An online store with shopping cart and payment integration.",
+            title: "E-commerce 'Tomato'",
+            description: "An online store with shopping cart and payment integration. you can buy any food from here.",
             link: "https://tomato-one-ebon.vercel.app/",
             github: "https://github.com/shamim-ahmad-ahnaf/Tomato",
             image: tomato
         },
 
         {
-            title: "E-commerce Store",
-            description: "An online store with shopping cart and payment integration.",
-            link: "https://store.example.com",
-            github: "https://github.com/your-username/e-commerce-store",
-            image: "https://cdn.pixabay.com/photo/2017/03/27/12/50/flower-2178507_640.jpg",
+            title: "Student Counter",
+            description: "An online store. where you can count the students to list whit phone number. and it will always be saved as well as you can calculate the present and absence.",
+            link: "https://student-counter-chi.vercel.app/",
+            github: "https://github.com/shamim-ahmad-ahnaf/Student-Counter",
+            image: student
+        },
+
+        {
+            title: "Analog Clock",
+            description: "A Clock create by JavaScript.",
+            link: "https://analog-clock-kohl-xi.vercel.app/",
+            github: "https://github.com/shamim-ahmad-ahnaf/Analog-Clock",
+            image: clock
+        },
+
+        
+        {
+            title: "Animation work",
+            description: "A animation project create by react.js.",
+            link: "https://shamim-ahmad-ahnaf.github.io/Tailwind-Full/",
+            github: "https://github.com/shamim-ahmad-ahnaf/Animation-Project",
+            image: animation
+        },
+
+        {
+            title: "First Tailwind",
+            description: "This is my first tailwind project from myself.",
+            link: "https://shamim-ahmad-ahnaf.github.io/Tailwind-Full/",
+            github: "https://github.com/shamim-ahmad-ahnaf/Tailwind-Full",
+            image: tailwind
         },
     ];
 

@@ -48,6 +48,14 @@ export default function Projects() {
             github: "https://github.com/shamim-ahmad-ahnaf/Tailwind-Full",
             image: tailwind
         },
+
+        {
+            title: "First Tailwind",
+            description: "This is my first tailwind project from myself.",
+            link: "https://shamim-ahmad-ahnaf.github.io/Tailwind-Full/",
+            github: "https://github.com/shamim-ahmad-ahnaf/Tailwind-Full",
+            image: tailwind
+        },
     ];
 
     return (

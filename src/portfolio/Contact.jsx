@@ -1,35 +1,53 @@
-import Swal from 'sweetalert2'
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Contact() {
+    const [loading, setLoading] = useState(false); // Loading state
+
     const onSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData(event.target);
+        setLoading(true); // Start loading
 
+        const formData = new FormData(event.target);
         formData.append("access_key", "68b0aec2-f8d4-486f-b62b-7f7266eda3b3");
 
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
-        }).then((res) => res.json());
-
-        if (res.success) {
-            console.log("Success", res);
-            Swal.fire({
-                title: "Success!",
-                text: "Message sent successfully!",
-                icon: "success"
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
             });
-            event.target.reset(); 
-        } else {
-            console.log("Error", res);
-            alert("Something went wrong! Please try again.");
+
+            const res = await response.json(); // Properly await JSON response
+
+            if (res.success) {
+                console.log("Success", res);
+                Swal.fire({
+                    title: "Success!",
+                    text: "Message sent successfully!",
+                    icon: "success"
+                });
+                event.target.reset();
+            } else {
+                console.log("Error", res);
+                Swal.fire({
+                    title: "Error!",
+                    text: "Something went wrong! Please try again.",
+                    icon: "error"
+                });
+            }
+        } catch (error) {
+            console.error("Fetch Error:", error);
+            Swal.fire({
+                title: "Error!",
+                text: "Network error. Please try again.",
+                icon: "error"
+            });
+        } finally {
+            setLoading(false); // Stop loading
         }
     };
 
@@ -55,7 +73,9 @@ export default function Contact() {
                     </div>
                     <div className="input-group-2">
                         <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-                        <input type="submit" value="Send Message" className="btn" />
+                        <button type="submit" className="btn" disabled={loading}>
+                            {loading ? "Sending..." : "Send Message"}
+                        </button>
                     </div>
                 </form>
             </section>

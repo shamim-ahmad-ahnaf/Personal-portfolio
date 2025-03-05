@@ -36,7 +36,7 @@ export default function Projects() {
         {
             title: "Animation work",
             description: "A animation project create by react.js.",
-            link: "https://shamim-ahmad-ahnaf.github.io/Tailwind-Full/",
+            link: "https://animation-project-three.vercel.app/",
             github: "https://github.com/shamim-ahmad-ahnaf/Animation-Project",
             image: animation
         },

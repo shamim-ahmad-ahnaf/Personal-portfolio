@@ -2,11 +2,11 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 export default function Contact() {
-    const [loading, setLoading] = useState(false); // Loading state
+    const [loading, setLoading] = useState(false);
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        setLoading(true); // Start loading
+        setLoading(true);
 
         const formData = new FormData(event.target);
         formData.append("access_key", "68b0aec2-f8d4-486f-b62b-7f7266eda3b3");
@@ -21,8 +21,7 @@ export default function Contact() {
                 body: JSON.stringify(Object.fromEntries(formData))
             });
 
-            const res = await response.json(); // Properly await JSON response
-
+            const res = await response.json();
             if (res.success) {
                 console.log("Success", res);
                 Swal.fire({
@@ -47,7 +46,7 @@ export default function Contact() {
                 icon: "error"
             });
         } finally {
-            setLoading(false); // Stop loading
+            setLoading(false);
         }
     };
 
